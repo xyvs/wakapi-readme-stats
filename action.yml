@@ -1,5 +1,5 @@
-name: 'Profile Readme Development Stats'
-author: Anmol Pratap Singh
+name: 'Profile Readme Development Stats for Wakapi'
+author: Fran
 description: 'Are you an early 🐤 or a night 🦉? When are you most productive during the day? Let''s check out in your readme!'
 
 inputs:
@@ -7,6 +7,10 @@ inputs:
     description: 'GitHub access token with Repo scope'
     required: true
     default: ${{ github.token }}
+
+  WAKATIME_URL:
+    description: 'Your Wakatime URL'
+    required: true
 
   WAKATIME_API_KEY:
     description: 'Your Wakatime API Key'
