@@ -15,6 +15,7 @@ class EnvironmentManager:
 
     GH_TOKEN = environ["INPUT_GH_TOKEN"]
     WAKATIME_API_KEY = environ["INPUT_WAKATIME_API_KEY"]
+    WAKATIME_URL = environ["INPUT_WAKATIME_URL"]
 
     SECTION_NAME = getenv("INPUT_SECTION_NAME", "waka")
     PULL_BRANCH_NAME = getenv("INPUT_PULL_BRANCH_NAME", "")
