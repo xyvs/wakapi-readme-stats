@@ -153,7 +153,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://wakareadmestats/waka-readme-stats:master'
+  image: 'docker://jofranmtz/wakapi-readme-stats:master'
 
 branding:
   icon: 'activity'
