@@ -170,7 +170,7 @@ async def get_stats() -> str:
 
     if EM.SHOW_FOLLOWERS:
         DBM.i("Adding profile followers...")
-        stats = f"**🐱 {FM.t('Awesome People!')}** \n\n"
+        stats += f"**🐱 {FM.t('Awesome People!')}** \n\n"
         data = GHM.USER.get_followers()
         for user in data:
             username = user.login.replace("-", "--")
