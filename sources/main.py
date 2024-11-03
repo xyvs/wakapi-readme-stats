@@ -89,7 +89,7 @@ async def get_short_github_info() -> str:
         for user in data:
             username = user.login.replace("-", "--")
             stats += f"![@{user.login}](https://img.shields.io/badge/@{username}-black?style=plastic&logo=github&logoColor=fff&link={user.html_url})"
-        stats += f"\nIf you follow my account you can appear on this list. *This list updates every 12h*\n\n"
+        stats += f"\n\nIf you follow my account you can appear on this list. *This list updates every 12h*\n\n"
 
     DBM.i("Adding short GitHub info...")
     stats += f"**🐱 {FM.t('My GitHub Data')}** \n\n"
