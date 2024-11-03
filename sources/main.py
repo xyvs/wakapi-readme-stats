@@ -83,7 +83,7 @@ async def get_short_github_info() -> str:
     """
 
     DBM.i("Adding short GitHub info...")
-    stats += f"**🐱 {FM.t('My GitHub Data')}** \n\n"
+    stats = f"**🐱 {FM.t('My GitHub Data')}** \n\n"
 
     DBM.i("Adding user disk usage info...")
     if GHM.USER.disk_usage is None:
