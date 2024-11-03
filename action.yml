@@ -56,6 +56,11 @@ inputs:
     description: "Shows the number of commit graph in the dev metrics"
     default: "True"
 
+  SHOW_FOLLOWERS:
+    required: false
+    description: "Shows the list of followers the user has"
+    default: "True"
+
   SHOW_LANGUAGE:
     required: false
     description: "Show the Coding language used in dev metrics"

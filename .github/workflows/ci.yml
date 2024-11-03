@@ -52,6 +52,7 @@ jobs:
           INPUT_SHOW_TOTAL_CODE_TIME: True
           INPUT_SHOW_SHORT_INFO: True
           INPUT_SHOW_COMMIT: True
+          INPUT_FOLLOWERS: True
           INPUT_SHOW_DAYS_OF_WEEK: True
           INPUT_SHOW_LANGUAGE_PER_REPO: True
           INPUT_SHOW_UPDATED_DATE: True

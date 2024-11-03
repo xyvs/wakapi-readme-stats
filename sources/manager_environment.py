@@ -26,6 +26,7 @@ class EnvironmentManager:
     SHOW_EDITORS = getenv("INPUT_SHOW_EDITORS", "True").lower() in _TRUTHY
     SHOW_TIMEZONE = getenv("INPUT_SHOW_TIMEZONE", "True").lower() in _TRUTHY
     SHOW_COMMIT = getenv("INPUT_SHOW_COMMIT", "True").lower() in _TRUTHY
+    SHOW_FOLLOWERS = getenv("INPUT_SHOW_FOLLOWERS", "True").lower() in _TRUTHY
     SHOW_LANGUAGE = getenv("INPUT_SHOW_LANGUAGE", "True").lower() in _TRUTHY
     SHOW_LINES_OF_CODE = getenv("INPUT_SHOW_LINES_OF_CODE", "False").lower() in _TRUTHY
     SHOW_LANGUAGE_PER_REPO = getenv("INPUT_SHOW_LANGUAGE_PER_REPO", "True").lower() in _TRUTHY
@@ -37,7 +38,7 @@ class EnvironmentManager:
     SHOW_TOTAL_CODE_TIME = getenv("INPUT_SHOW_TOTAL_CODE_TIME", "True").lower() in _TRUTHY
 
     COMMIT_BY_ME = getenv("INPUT_COMMIT_BY_ME", "False").lower() in _TRUTHY
-    COMMIT_MESSAGE = getenv("INPUT_COMMIT_MESSAGE", "Updated with Dev Metrics")
+    COMMIT_MESSAGE = getenv("INPUT_COMMIT_MESSAGE", "Update User Stats")
     COMMIT_USERNAME = getenv("INPUT_COMMIT_USERNAME", "")
     COMMIT_EMAIL = getenv("INPUT_COMMIT_EMAIL", "")
     COMMIT_SINGLE = getenv("INPUT_COMMIT_SINGLE", "").lower() in _TRUTHY
