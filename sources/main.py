@@ -175,7 +175,7 @@ async def get_stats() -> str:
         for user in data:
             username = user.login.replace("-", "--")
             stats += f"[![@{user.login}](https://img.shields.io/badge/@{username}-black?style=plastic&logo=github&logoColor=fff)]({user.html_url}) "
-        stats += f"\n\n###### Follow my account you can appear on this list. *This list updates every 12h*\n\n"
+        stats += f"\n\n###### Follow my account to appear on this list. *This list updates every 12h*\n\n"
 
     stats += f"**📈 {FM.t('Stats')}** \n\n"
 
