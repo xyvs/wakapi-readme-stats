@@ -81,8 +81,17 @@ async def get_short_github_info() -> str:
 
     :returns: String representation of the info.
     """
+
+    if EM.SHOW_FOLLOWERS:
+        DBM.i("Adding profile followers...")
+        stats = f"**🐱 {FM.t('Awesome People!')}** \n\n"
+        data = GHM.USER.get_followers()
+        for user in data:
+            stats += f"![@{user.login}](https://img.shields.io/badge/@{user.login}-black?style=plastic&logo=github&logoColor=fff&link={user.html_url})"
+        stats = f"If you follow my account you can appear on this list. *This list updates every 12h*\n\n"
+
     DBM.i("Adding short GitHub info...")
-    stats = f"**🐱 {FM.t('My GitHub Data')}** \n\n"
+    stats += f"**🐱 {FM.t('My GitHub Data')}** \n\n"
 
     DBM.i("Adding user disk usage info...")
     if GHM.USER.disk_usage is None:
@@ -178,14 +187,6 @@ async def get_stats() -> str:
         data = GHM.REMOTE.get_views_traffic(per="week")
         stats += f"![Profile Views](http://img.shields.io/badge/{quote(FM.t('Profile Views'))}-{data['count']}-blue)\n\n"
 
-    if EM.SHOW_FOLLOWERS:
-        DBM.i("Adding profile followers...")
-        data = GHM.USER.get_followers()
-        for user in data:
-            DBM.i(str(user))
-            DBM.i(str(user.login))
-            DBM.i(str(user.html_url))
- 
     if EM.SHOW_LINES_OF_CODE:
         DBM.i("Adding lines of code info...")
         total_loc = sum([yearly_data[y][q][d]["add"] for y in yearly_data.keys() for q in yearly_data[y].keys() for d in yearly_data[y][q].keys()])
