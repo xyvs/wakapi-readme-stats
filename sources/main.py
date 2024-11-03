@@ -82,8 +82,17 @@ async def get_short_github_info() -> str:
     :returns: String representation of the info.
     """
 
+    if EM.SHOW_FOLLOWERS:
+        DBM.i("Adding profile followers...")
+        stats = f"**⭐ {FM.t('Awesome People!')}** \n\n"
+        data = GHM.USER.get_followers()
+        for user in data:
+            username = user.login.replace("-", "")
+            stats += f"![@{user.login}](https://img.shields.io/badge/@{user.login}-black?style=plastic&logo=github&logoColor=fff&link={user.html_url})"
+        stats += f"\nIf you follow my account you can appear on this list. *This list updates every 12h*\n\n"
+
     DBM.i("Adding short GitHub info...")
-    stats = f"**🐱 {FM.t('My GitHub Data')}** \n\n"
+    stats += f"**🐱 {FM.t('My GitHub Data')}** \n\n"
 
     DBM.i("Adding user disk usage info...")
     if GHM.USER.disk_usage is None:
@@ -167,15 +176,6 @@ async def get_stats() -> str:
         DBM.w("User yearly data not needed, skipped.")
 
     
-    if EM.SHOW_FOLLOWERS:
-        DBM.i("Adding profile followers...")
-        stats = f"**⭐ {FM.t('Awesome People!')}** \n\n"
-        data = GHM.USER.get_followers()
-        for user in data:
-            username = user.login.replace("-", "--")
-            stats += f"![@{user.login}](https://img.shields.io/badge/@{username}-black?style=plastic&logo=github&logoColor=fff&link={user.html_url})"
-        stats += f"\n\nIf you follow my account you can appear on this list. *This list updates every 12h*\n\n"
-
     if EM.SHOW_TOTAL_CODE_TIME:
         DBM.i("Adding total code time info...")
         data = await DM.get_remote_json("waka_all")
