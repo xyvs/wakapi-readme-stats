@@ -181,7 +181,7 @@ async def get_stats() -> str:
     if EM.SHOW_FOLLOWERS:
         DBM.i("Adding profile followers...")
         data = GHM.USER.get_followers()
-        DBM.i(str(data)")
+        DBM.i(str(data))
  
     if EM.SHOW_LINES_OF_CODE:
         DBM.i("Adding lines of code info...")
