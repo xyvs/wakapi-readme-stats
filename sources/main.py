@@ -88,7 +88,7 @@ async def get_short_github_info() -> str:
         data = GHM.USER.get_followers()
         for user in data:
             stats += f"![@{user.login}](https://img.shields.io/badge/@{user.login}-black?style=plastic&logo=github&logoColor=fff&link={user.html_url})"
-        stats += f"If you follow my account you can appear on this list. *This list updates every 12h*\n\n"
+        stats += f"\nIf you follow my account you can appear on this list. *This list updates every 12h*\n\n"
 
     DBM.i("Adding short GitHub info...")
     stats += f"**🐱 {FM.t('My GitHub Data')}** \n\n"
