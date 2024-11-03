@@ -183,6 +183,8 @@ async def get_stats() -> str:
         data = GHM.USER.get_followers()
         for user in data:
             DBM.i(str(user))
+            DBM.i(str(user.login))
+            DBM.i(str(user.html_url))
  
     if EM.SHOW_LINES_OF_CODE:
         DBM.i("Adding lines of code info...")
