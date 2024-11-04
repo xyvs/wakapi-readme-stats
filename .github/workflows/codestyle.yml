@@ -10,10 +10,10 @@ jobs:
 
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: https://github.com/actions/checkout@v3
 
       - name: Setup Python 3.11 🐍
-        uses: actions/setup-python@v4
+        uses: https://github.com/actions/setup-python@v4
         with:
           python-version: 3.11
 

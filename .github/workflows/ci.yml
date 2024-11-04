@@ -15,10 +15,10 @@ jobs:
 
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: https://github.com/actions/checkout@v3
 
       - name: Setup Python 3.11 🐍
-        uses: actions/setup-python@v4
+        uses: https://github.com/actions/setup-python@v4
         with:
           python-version: 3.11
           cache: 'pip'
@@ -30,7 +30,7 @@ jobs:
         run: mkdir assets
 
       - name: Create Previous Comments 🫣
-        uses: int128/hide-comment-action@v1
+        uses: https://github.com/int128/hide-comment-action@v1
         with:
           starts-with: "README stats current output:"
 
@@ -71,14 +71,14 @@ jobs:
           echo BRANCH_NAME=${BRANCH_NAME} >> $GITHUB_ENV
 
       - name: Upload Artifact 📦
-        uses: actions/upload-artifact@v3
+        uses: https://github.com/actions/upload-artifact@v3
         if: ${{ github.ref != 'refs/heads/master' }}
         with:
           name: ${{ format('github-pages-for-branch-{0}', env.BRANCH_NAME) }}
           path: assets
 
       - name: Create Comment 💬
-        uses: jungwinter/comment@v1
+        uses: https://github.com/jungwinter/comment@v1
         with:
           type: create
           body: ${{ steps.make-stats.outputs.README_CONTENT }}
