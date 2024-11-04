@@ -62,7 +62,7 @@ jobs:
         run: python3 sources/main.py
 
       - name: Save Branch Name Without Slashes 📛
-        if: ${{ github.ref != 'refs/heads/master' }}
+        if: ${{ github.ref != 'refs/heads/main' }}
         env:
           BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         run: |
@@ -72,7 +72,7 @@ jobs:
 
       - name: Upload Artifact 📦
         uses: https://github.com/actions/upload-artifact@v3
-        if: ${{ github.ref != 'refs/heads/master' }}
+        if: ${{ github.ref != 'refs/heads/main' }}
         with:
           name: ${{ format('github-pages-for-branch-{0}', env.BRANCH_NAME) }}
           path: assets
