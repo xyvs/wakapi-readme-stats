@@ -230,6 +230,7 @@ async def main():
     DBM.i("Managers initialized.")
 
     stats = await get_stats()
+    DBM.i(str(stats))
     if not EM.DEBUG_RUN:
         GHM.update_readme(stats)
         GHM.commit_update()
